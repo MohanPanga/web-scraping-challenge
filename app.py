@@ -1,4 +1,3 @@
-import re
 from flask import Flask, render_template, redirect
 import scrape_mars
 from flask_pymongo import PyMongo
@@ -12,7 +11,7 @@ mongo = PyMongo(app)
 @app.route("/")
 def index():
     data = mongo.db.webscrapes.find_one()
-    print(data)
+    # print(data)
     return render_template('index.html',data = data)
 
 
